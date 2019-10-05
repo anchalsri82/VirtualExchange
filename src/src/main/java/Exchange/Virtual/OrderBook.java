@@ -127,7 +127,7 @@ public final class OrderBook implements IOrderBook {
                     tradeQuantity =  pendingQuantity;
                     pendingQuantity = 0;
                     var newQuantity = bestAskQuantity - tradeQuantity;
-                    update(newQuantity, orderPrice, _sellMap, _sellBook);
+                    update(newQuantity, bestAskPrice, _sellMap, _sellBook);
                 }
                 trades.add(new TradeInfo(SideType.Buy, tradeQuantity, bestAskPrice));
                 if (!_sellBook.isEmpty())
